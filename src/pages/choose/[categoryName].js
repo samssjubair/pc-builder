@@ -1,5 +1,4 @@
 import RootLayout from "@/components/layout/RootLayout";
-import ChoiceCard from "@/components/ui/cards/ChoiceCard";
 import ProductCard from "@/components/ui/cards/ProductCard";
 import { categories } from "@/data/category";
 import Image from "next/image";
@@ -11,7 +10,7 @@ const ProductDetailPage = ({ products, categoryName }) => {
       <h2 className="text-4xl font-bold text-center my-8">{categoryName}</h2>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => (
-          <ChoiceCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </>
@@ -24,18 +23,16 @@ ProductDetailPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-export const getStaticPaths = async () => {
-  
+// export const getStaticPaths = async () => {
+//   const paths = categories.map((category) => ({
+//     params: { categoryName: category },
+//   }));
+//   console.log(paths);
 
-  const paths = categories.map((category) => ({
-    params: { categoryName: category },
-  }));
-  console.log(paths);
+//   return { paths, fallback: false };
+// };
 
-  return { paths, fallback: false };
-};
-
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
     `http://localhost:3000/api/products?category=${params.categoryName}`
