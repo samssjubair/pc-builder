@@ -17,39 +17,40 @@ async function run(req, res) {
     const productCollection = client.db("pc-builder").collection("products");
 
     if (req.method === "GET") {
-      const productId = req.query.id; // This will capture the product ID from the URL
+      const categoryId = req.query.category; // This will capture the category name from the query params
 
-      if (productId) {
-        // Get a specific product by ID
-        const product = await productCollection.findOne({
-          _id: new ObjectId(productId),
-        });
+      if (categoryId) {
+        // Get products by category
+        const products = await productCollection
+          .find({ category: categoryId })
+          .toArray();
 
-        if (product) {
+        if (products.length > 0) {
           res.send({
             message: "success",
             status: 200,
-            data: product,
+            data: products,
           });
         } else {
           res.send({
-            message: "Product not found",
+            message: "No products found for the specified category",
             status: 404,
           });
         }
       } else {
-        // Get all products
-        const products = await productCollection.find({}).toArray();
+        // If no category provided, get all products
+        const allProducts = await productCollection.find({}).toArray();
         res.send({
           message: "success",
           status: 200,
-          data: products,
+          data: allProducts,
         });
       }
     }
   } finally {
     // Don't forget to close the client connection after the request is handled
-    await client.close();
+    // await client.close();
   }
 }
+
 export default run;
