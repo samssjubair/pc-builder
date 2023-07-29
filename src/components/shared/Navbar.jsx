@@ -33,27 +33,29 @@ const Navbar = () => {
     return (
       <header className="bg-gray-800 py-4">
         <div className="container mx-auto flex items-center justify-between">
-          <div className="text-white text-2xl font-bold">PC builder PRO</div>
+          <div className="text-white text-2xl font-bold cursor-pointer">
+            <Link href="/">PC builder PRO</Link>
+          </div>
 
           <nav>
-            <a
-              href="#"
+            <Link
+              href="/"
               className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/"
               className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
             >
               About
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/"
               className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
             >
               Contact
-            </a>
+            </Link>
             <div className="relative inline-block text-left">
               {/* Dropdown content */}
               <Dropdown
