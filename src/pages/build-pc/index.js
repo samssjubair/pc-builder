@@ -17,7 +17,7 @@ const BuildPCPage = () => {
                 </h2>
 
             </div>
-            <button className='border-blue-800 border-2 rounded text-blue-800 p-3'><Link href={`/choose/${category}`}>Choose</Link></button>
+            <button className='border-blue-800 border-2 rounded text-blue-800 p-3'><Link href={`/build-pc/choose/${category}`}>Choose</Link></button>
           </div>
         ))}
       </div>
