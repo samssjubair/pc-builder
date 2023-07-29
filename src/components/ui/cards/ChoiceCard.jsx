@@ -1,10 +1,20 @@
+import { selectComponent } from "@/redux/features/builder/builderSlice";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 const ChoiceCard = ({ product }) => {
+    const router = useRouter();
+  const dispatch = useDispatch();
+  const handleAddToBuilder = () => {
+    dispatch(
+      selectComponent({ category: product.category, component: product })
+    );
+    router.push("/build-pc");
+  };
   return (
-    <Link href={`/product/${product._id}`}>
       <div className="bg-white shadow-lg rounded-lg overflow-hidden flex m-6">
         {/* Image on the left */}
         <div className="w-1/4">
@@ -33,12 +43,14 @@ const ChoiceCard = ({ product }) => {
           </p>
           <p className="text-sm text-gray-500">{product.status}</p>
           {/* Add button (you can customize this button further as needed) */}
-          <button className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-md">
-            Add
+          <button
+            onClick={handleAddToBuilder}
+            className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-md"
+          >
+            Add to Builder
           </button>
         </div>
       </div>
-    </Link>
   );
 };
 

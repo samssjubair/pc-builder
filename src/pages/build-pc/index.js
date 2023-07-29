@@ -3,8 +3,11 @@ import { categories } from '@/data/category';
 import { LaptopOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const BuildPCPage = () => {
+  const { selectedComponents } = useSelector((state) => state.builder);
+  console.log(selectedComponents);
     return (
       <div className='p-8'>
         <h2 className="text-4xl px-2 font-bold text-center my-8">Build Your Own PC</h2>

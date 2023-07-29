@@ -6,6 +6,7 @@ import Image from "next/image";
 import React from "react";
 
 const ProductDetailPage = ({ products, categoryName }) => {
+  
   return (
     <>
       <h2 className="text-4xl font-bold text-center my-8">Choose Your {categoryName}</h2>
