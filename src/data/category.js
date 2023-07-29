@@ -1,0 +1,1 @@
+export const categories= ['CPU', 'Monitor', 'Keyboard', 'Mouse', 'RAM', 'Storage']
