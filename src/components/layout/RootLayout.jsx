@@ -1,13 +1,4 @@
-import {
-  ProfileOutlined,
-  MobileOutlined,
-  UserOutlined,
-  FacebookFilled,
-  LinkedinFilled,
-  GoogleSquareFilled,
-  TwitterSquareFilled,
-  DownOutlined,
-} from "@ant-design/icons";
+
 import { Button, Dropdown, Layout, Menu } from "antd";
 const { Header, Content, Footer } = Layout;
 import styles from "@/styles/Home.module.css";
@@ -25,7 +16,7 @@ const RootLayout = ({ children }) => {
       <Content
         style={{
           padding: "0 24px",
-          minHeight: "100vh",
+          minHeight: "80vh",
         }}
       >
         {children}

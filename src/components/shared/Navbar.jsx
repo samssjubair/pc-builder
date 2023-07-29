@@ -59,13 +59,8 @@ const Navbar = () => {
             >
               About
             </Link>
-            <Link
-              href="/"
-              className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Contact
-            </Link>
-            <div className="relative inline-block text-left">
+            
+            <div className="relative inline-block text-left ">
               {/* Dropdown content */}
               <Dropdown
                 menu={{
@@ -82,7 +77,7 @@ const Navbar = () => {
           </nav>
 
           {/* PC builder function */}
-          <button className="bg-blue-600 text-white rounded p-2 text-sm font-medium">
+          <button className="bg-blue-600 text-white rounded p-2 px-3 text-sm font-medium">
             <Link href="/build-pc">PC Builder</Link>
           </button>
         </div>

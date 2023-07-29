@@ -11,7 +11,7 @@ const ProductDetailPage = ({ products, categoryName }) => {
       <h2 className="text-4xl font-bold text-center my-8">{categoryName}</h2>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => (
-          <ChoiceCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </>
