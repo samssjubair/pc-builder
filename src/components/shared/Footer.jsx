@@ -1,12 +1,12 @@
 import { FacebookFilled, GoogleSquareFilled, LinkedinFilled, TwitterSquareFilled } from '@ant-design/icons';
-import { Footer } from 'antd/es/layout/layout';
+// import { Footer } from 'antd/es/layout/layout';
 import Link from 'next/link';
 import React from 'react';
 import styles from "@/styles/Home.module.css";
 
 const FooterComponent = () => {
     return (
-      <Footer
+      <footer
         style={{
           textAlign: "center",
         }}
@@ -34,7 +34,7 @@ const FooterComponent = () => {
           </Link>
         </p>
         PC Builder Pro @ Samss Jubair
-      </Footer>
+      </footer>
     );
 };
 

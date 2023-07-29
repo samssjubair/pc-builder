@@ -1,44 +1,33 @@
 import { DownOutlined } from '@ant-design/icons';
 import { Button, Dropdown } from 'antd';
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
     const items = [
       {
         key: "1",
-        label: (
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.antgroup.com"
-          >
-            1st menu item
-          </a>
-        ),
+        label: <Link href="/category/cpu">CPU / Processor</Link>,
       },
       {
         key: "2",
-        label: (
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.aliyun.com"
-          >
-            2nd menu item
-          </a>
-        ),
+        label: <Link href="/category/ram">RAM</Link>,
       },
       {
         key: "3",
-        label: (
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.luohanacademy.com"
-          >
-            3rd menu item
-          </a>
-        ),
+        label: <Link href="/category/storage">Storage</Link>,
+      },
+      {
+        key: "4",
+        label: <Link href="/category/monitor">Monitor</Link>,
+      },
+      {
+        key: "5",
+        label: <Link href="/category/keyboard">Keyboard</Link>,
+      },
+      {
+        key: "6",
+        label: <Link href="/category/mouse">Mouse</Link>,
       },
     ];
     return (
@@ -82,9 +71,9 @@ const Navbar = () => {
           </nav>
 
           {/* PC builder function */}
-          <div className="bg-blue-600 text-white rounded p-2 text-sm font-medium">
+          <button className="bg-blue-600 text-white rounded p-2 text-sm font-medium">
             Build Your PC
-          </div>
+          </button>
         </div>
       </header>
     );
