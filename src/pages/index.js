@@ -41,7 +41,8 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/products");
+  // console.log(process.env.BASE_URL);
+  const res = await fetch(`https://pc-builder-psi.vercel.app/api/products`);
   const data = await res.json();
   return {
     props: {

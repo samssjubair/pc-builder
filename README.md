@@ -1,6 +1,6 @@
 # PC-Builder-Pro (Assignment 6)
 
-## Live URL: 
+## Live URL: https://pc-builder-psi.vercel.app/
 
 ## Technology Used
 - Next.js

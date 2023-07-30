@@ -37,7 +37,7 @@ ProductDetailPage.getLayout = function getLayout(page) {
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:3000/api/products?category=${params.categoryName}`
+    `https://pc-builder-psi.vercel.app/api/products?category=${params.categoryName}`
   );
   const data = await res.json();
 

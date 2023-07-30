@@ -1,8 +1,6 @@
 import RootLayout from "@/components/layout/RootLayout";
-import ChoiceCard from "@/components/ui/cards/ChoiceCard";
 import ProductCard from "@/components/ui/cards/ProductCard";
 import { categories } from "@/data/category";
-import Image from "next/image";
 import React from "react";
 
 const ProductDetailPage = ({ products, categoryName }) => {
@@ -25,12 +23,10 @@ ProductDetailPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  
 
   const paths = categories.map((category) => ({
     params: { categoryName: category },
   }));
-  console.log(paths);
 
   return { paths, fallback: false };
 };
@@ -38,7 +34,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:3000/api/products?category=${params.categoryName}`
+    `https://pc-builder-psi.vercel.app/api/products?category=${params.categoryName}`
   );
   const data = await res.json();
 
